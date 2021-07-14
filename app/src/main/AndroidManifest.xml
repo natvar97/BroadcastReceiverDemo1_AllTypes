@@ -20,18 +20,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BroadcastReceiverDemo1">
         <activity android:name=".localbroadcastmanager.LocalBroadcastManagerReceiverActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".orderedbroadcasts.OrderedBroadcastActivity">
             <!--            <intent-filter>-->
             <!--                <action android:name="android.intent.action.MAIN" />-->
 
             <!--                <category android:name="android.intent.category.LAUNCHER" />-->
             <!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".orderedbroadcasts.OrderedBroadcastActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".custombroadcast.CustomBroadcastActivity">
 
