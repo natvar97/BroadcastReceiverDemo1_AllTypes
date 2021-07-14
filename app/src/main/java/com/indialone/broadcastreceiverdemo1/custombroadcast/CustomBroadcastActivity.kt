@@ -42,6 +42,4 @@ class CustomBroadcastActivity : AppCompatActivity() {
     project then you can see the custom broadcast message but it is only when our this running app is in background
     other wise no message is print on textview in "custom-testing" app
 
-    Thank u.
-
  */

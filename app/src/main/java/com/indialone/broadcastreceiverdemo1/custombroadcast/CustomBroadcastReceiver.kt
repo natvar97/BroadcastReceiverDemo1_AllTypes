@@ -10,6 +10,8 @@ class CustomBroadcastReceiver : BroadcastReceiver() {
         if ("com.indialone.CUSTOM_ACTION".equals(intent?.action)) {
             val customText = intent?.getStringExtra("com.indialone.EXTRA_TEXT")
             Toast.makeText(context, customText, Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(context, "Another Custom action occured!", Toast.LENGTH_SHORT).show()
         }
     }
 }
