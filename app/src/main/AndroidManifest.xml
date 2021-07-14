@@ -8,6 +8,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+    <permission android:name="com.indialone.CUSTOM_PERMISSION" />
+    <!-- this permission bcz we declare it in sender application -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,19 +19,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BroadcastReceiverDemo1">
-        <activity android:name=".custombroadcast.CustomBroadcastActivity">
+        <activity android:name=".localbroadcastmanager.LocalBroadcastManagerReceiverActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".internetconnectivity.InternetConnectivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+        <activity android:name=".orderedbroadcasts.OrderedBroadcastActivity">
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".custombroadcast.CustomBroadcastActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".internetconnectivity.InternetConnectivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".batteryreceiver.BatteryReceiverActivity">
 
@@ -64,6 +86,23 @@
         </receiver>
         <receiver android:name=".vogella.MyBroadCastReceiver" />
         <receiver android:name=".batteryreceiver.BatteryBroadcastReceiver" />
+
+        <!-- user this receivers if you need to do ordered receiver example -->
+
+        <receiver
+            android:name=".orderedbroadcasts.OrderedBroadcastReceiverTwo"
+            android:permission="android.permission.INTERNET">
+            <intent-filter>
+                <action android:name="com.indialone.CUSTOM_ACTION" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".orderedbroadcasts.OrderedBroadcastReceiverThree"
+            android:permission="com.indialone.CUSTOM_PERMISSION">
+            <intent-filter>
+                <action android:name="com.indialone.CUSTOM_ACTION" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
