@@ -58,10 +58,9 @@ class VogellaActivity : AppCompatActivity() {
         Toast.makeText(this, "Alarm is set to $i seconds", Toast.LENGTH_SHORT).show()
     }
 
-    private fun broadCastIntent() {
-        val intent = Intent(this, OwnPhoneReceiver::class.java)
-        val pendingIntent = PendingIntent.getBroadcast(this, 1234, intent, 0)
-
-    }
+//    private fun broadCastIntent() {
+//        val intent = Intent(this, OwnPhoneReceiver::class.java)
+//        val pendingIntent = PendingIntent.getBroadcast(this, 1234, intent, 0)
+//    }
 
 }
